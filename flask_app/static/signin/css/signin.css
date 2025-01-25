@@ -1,0 +1,49 @@
+.input-area {
+    background-color: azure;
+    opacity: 80%;
+    border-radius: 10px;
+    font-size: large;
+    width: 50vw;
+    padding: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 2px solid black;
+}
+
+.info-input {
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid black;
+    color: black;
+    transition: 0.5s;
+    height: 5vh;
+    width: 95%;
+}
+
+.info-input:focus {
+    border-color: violet;
+    transition: 0.5s;
+}
+
+.incorrect-credentials {
+    color: red;
+}
+
+#sign_in_button {
+    border-radius: 10px;
+    background-color: white;
+    color: green;
+    font-weight: bold;
+    font-size: large;
+    transition: 0.5s;
+}
+
+#sign_in_button:hover {
+    background-color: green;
+    color: white;
+    transition: 0.5s;
+}

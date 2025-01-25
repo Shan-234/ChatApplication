@@ -1,0 +1,52 @@
+{% extends 'shared/layout.html' %}
+
+{% block extraCSS %}
+<link rel="stylesheet" href="../static/signup/css/signup.css">
+{% endblock %}
+
+{% block maincontent %}
+<div class="input-area">
+    <label for="first_name">First Name</label>
+    <br>
+    <input id="first_name" class="info-input" type="text" placeholder="First Name..." />
+
+    <br>
+    <br>
+
+    <label for="last_name">Last Name</label>
+    <br>
+    <input id="last_name" class="info-input" type="text" placeholder="Last Name..." />
+
+    <br>
+    <br>
+
+    <label for="username">Username</label>
+    <br>
+    <input id="username" class="info-input" type="text" placeholder="Username..." />
+
+    <br>
+    <br>
+
+    <label for="password">Password</label>
+    <br>
+    <input id="password" class="info-input" type="password" placeholder="Password..." />
+
+    <br>
+    <br>
+
+    <label for="confirm_password">Confirm Password</label>
+    <br>
+    <input id="confirm_password" class="info-input" type="password" placeholder=" Confirm Password..." />
+
+    <br>
+    <br>
+
+    <button id="sign_up_button">Sign Up</button>
+    <p id="incorrect_credentials" class="incorrect-credentials"></p>
+</div>
+{% endblock %}
+
+{% block extraJS %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="../static/signup/js/signup.js"></script>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends 'shared/layout.html' %}
+
+{% block extraCSS %}
+<link rel="stylesheet" href="../static/chat/css/chat.css">
+{% endblock %}
+
+{% block maincontent %}
+<div class="chat-window">
+    <div id="chat_list" class="chat-list">
+        {% for chat in chats_data %}
+            <div id="chat_{{ chat['room_id'] }}" class="chat-element" onclick="OnChat(event)">
+                <h3 id="chat_{{ chat['room_id'] }}_name">{{ chat['room_name'] }}</h3>
+                <p id="chat_{{ chat['room_id'] }}_new_msg" class="{% if (chat['new_msg'] > 0) %}new-msg{% endif %}">{{ chat['new_msg'] if (chat['new_msg'] > 0) else "No" }} new messages</p>
+            </div>
+        {% endfor %}
+    </div>
+    <div id="chat_area" class="chat-area">
+    </div>
+</div>
+<button id="add_chat" class="add-button" onclick="ShowAddDialog(event)">+ Add Group</button>
+
+<dialog id="add_chat_dialog" class="chat-dialog">
+    <label for="chat_name">Select a name for your chat:</label>
+    <br>
+    <input id="chat_name" class="info-input" type="text" placeholder="Write the group name here..."/>
+
+    <br>
+    <br>
+
+    <h3>Your chat must have at least one more member!</h3>
+    <br>
+    <div id="members">
+        <input type="text" class="info-input" placeholder="Member 1 Username here..."/>
+        <br>
+        <br>
+    </div>
+    <button class="add-button" onclick="AddMember()">+ Add Member</button>
+
+    <br>
+    <br>
+
+    <button class="add-button" onclick="OnAddChat(event)">Save</button>
+    <button class="add-button" onclick="OnCancel(event)">Cancel</button>
+    <p id="error_message" class="error-message"></p>
+</dialog>
+
+<dialog id="edit_chat_dialog" class="chat-dialog">
+    <label for="edit_chat_name"><h3>Chat Name:</h3></label>
+    <br>
+    <input id="edit_chat_name" class="info-input" type="text" placeholder="Write the name here..." disabled/>
+
+    <br>
+    <br>
+    
+    <button id="edit_save" class="add-button" onclick="OnEditSave(event)">Edit</button>
+
+    <br>
+    <br>
+
+    <h3>Chat Members:</h3>
+    <ol id="edit_members">
+    </ol>
+
+    <br>
+    <br>
+
+    <p id="edit_error_message" class="error-message"></p>
+    <button id="edit_close" class="add-button" onclick="OnCancel(event)">Close</button>
+</dialog>
+
+<dialog id="add_member_dialog" class="chat-dialog">
+    <h3>Chat Members:</h3>
+    <ol id="add_members">
+    </ol>
+    <button id="add_member" class="add-button" onclick="OnAdd(event)">+ Add Member</button>
+    
+    <br>
+    <br>
+
+    <p id="member_error_message" class="error-message"></p>
+    <button id="close_button" class="add-button" onclick="OnCancel(event)">Close</button>
+</dialog>
+
+<dialog id="leave_chat_dialog" class="chat-dialog">
+    <h4>Are you sure you want to leave the group?</h4>
+    <button onclick="OnConfirmLeave(event)" class="add-button">Leave</button>
+    <button onclick="OnCancel(event)" class="add-button">Cancel</button>
+</dialog>
+{% endblock %}
+
+{% block extraJS %}
+<script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+<script src="https://cdn.socket.io/3.1.1/socket.io.min.js"></script>
+<script src="../static/chat/js/chat.js"></script>
+{% endblock %}

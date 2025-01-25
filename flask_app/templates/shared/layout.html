@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html class="page-style" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Chat Application</title>
+        <link rel="stylesheet" href="../../static/layout/css/layout.css">
+        {% block extraCSS %}{% endblock %}
+    </head>
+
+    <nav class="nav-style">
+        <div class="title">
+            {% if first_name == "Unknown" %}
+                <p id="title">Chat Application</p>
+            {% else %}
+                <p id="title">Welcome, {{ first_name }}</p>
+            {% endif %}
+        </div>
+        
+        <div class="links">
+            <a href="/home" class="nav-link">
+                <p>Home</p>
+            </a>
+            <a href="/chat" class="nav-link">
+                <p>Chat</p>
+            </a>
+            {% if first_name == "Unknown" %}
+                <a href="/sign_in" class="nav-link">
+                    <p>Sign In</p>
+                </a>
+            {% else %}
+                <a href="/sign_out" class="nav-link">
+                    <p>Sign Out</p>
+                </a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <body>
+        <main>
+            {% block maincontent %}{% endblock %}
+        </main>
+
+        <footer>
+
+        </footer>
+    </body>
+
+    {% block extraJS %}{% endblock %}
+</html>
