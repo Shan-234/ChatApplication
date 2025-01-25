@@ -18,7 +18,7 @@ This repository houses the source code to a Flask Web-Based Chat Application tha
 
 <br>
 
-**Final Product** - Click <a href="https://chat-app-524031479607.us-central1.run.app">here</a> to view the latest version application.
+**Final Product** - Click <a href="https://chat-app-524031479607.us-central1.run.app" target="_blank">here</a> to view the latest version application.
 
 ## Debugging With Docker
 
@@ -46,7 +46,7 @@ docker-compose -f docker-compose.yml -p chat-app-container up
 
 ## Using the Application
 
-1. **Sign Up** -  In the homepage of the web app, click on the hyperlink if prompted to sign up, or you can just sign up <a href="https://chat-app-524031479607.us-central1.run.app/sign_up">here</a>.
+1. **Sign Up** -  In the homepage of the web app, click on the hyperlink if prompted to sign up, or you can just sign up <a href="https://chat-app-524031479607.us-central1.run.app/sign_up" target="_blank">here</a>.
 
 2. **Sign In** - Once you have signed up, click on `Sign In` on the top-right of the webpage to use your registered username and password to sign into your account.
 
