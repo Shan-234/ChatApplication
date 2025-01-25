@@ -92,6 +92,10 @@ docker-compose -f docker-compose.yml -p chat-app-container up
 
 3. In the dialog box, click on `Leave` again to confirm leaving the group.
 
+## Additional Details
+
+If you would like to learn more about the architecture of this web application, you can find a detailed report <a href="https://drive.google.com/file/d/1K9PvmZqyeo_xEBcziMdZneprNaRltqto/view?usp=drive_link" target="_blank">here</a>.
+
 ## Acknowledgements
 
 * **Dr. Mohammad M. Ghassemi**: Assistant Professor at Michigan State University, Department of Computer Science and Engineering.
